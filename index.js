@@ -13,6 +13,16 @@ if (typeof MemoryProbe === 'undefined') {
             }
             return probe;
         };
+
+        MemoryProbe.set = function setProbe(target, name){
+            if (typeof target === 'object' && !target.hasOwnProperty('constructor')) {
+                target.constructor = this.get(name);
+                return true;
+            } else {
+                console.warn('cannot set probe : ', target, name);
+                return false;
+            }
+        };
     })();
 } else {
     console.warn('MemoryProbe is already defined')
