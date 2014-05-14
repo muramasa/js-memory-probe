@@ -1,0 +1,25 @@
+{
+  "name": "js-memory-probe",
+  "version": "0.0.1",
+  "homepage": "https://github.com/muramasa/js-memory-probe",
+  "authors": [
+    "Kazumasa Murata <muramasa@ryogi.com>"
+  ],
+  "description": "Add probe for js memory analysis",
+  "main": "index.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "memory",
+    "analysis"
+  ],
+  "license": "Apache License v2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
