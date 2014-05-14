@@ -15,11 +15,14 @@ if (typeof MemoryProbe === 'undefined') {
         };
 
         MemoryProbe.set = function setProbe(target, name){
-            if (typeof target === 'object' && !target.hasOwnProperty('constructor')) {
+            if (typeof target !== 'object') {
+                console.warn('target is not an object : ', name, name);
+                return false;
+            } else if (!target.hasOwnProperty('constructor')) {
                 target.constructor = this.get(name);
                 return true;
             } else {
-                console.warn('cannot set probe : ', target, name);
+                console.warn('target has constructor, ' + target.constructor.name + ' : ', name, name);
                 return false;
             }
         };
